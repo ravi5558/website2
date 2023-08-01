@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+
+}
+
+.sidebar{
+    position: fixed;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color:#042331;
+    transition: all .5s ease;
+
+
+}
+.sidebar header{
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    background-color: #063146;
+    user-select: none;
+}
+.sidebar ul a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-top: 3px solid rgba(255,255,255,.1);
+    border-bottom: 2px solid black ;
+    transition: .4s ;
+}
+ul li:hover a{
+    padding-left: 50px;
+
+}
+.sidebar ul a i{
+    margin-right: 16px;
+}
+#check{
+    display: none;
+
+}
+label #btn,
+label #cancle{
+    position: absolute;
+  
+    cursor: pointer;
+    background: #042331;
+    border-radius: 5px;
+}
+label #btn{
+    left: 40px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding:6px 12px ;
+    transition: all .5s ;
+
+}
+label #cancle{
+    z-index: 1111;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+
+
+}
+
+#check:checked ~ .sidebar{
+    left: 0;
+}
+
+#check:checked~ label #btn{
+    left: 250px;
+    opacity: 0;
+    pointer-events:none ;
+}
+#check:checked ~label #cancle{
+    left: 195px;
+}
+#check:checked~label #section{
+    margin-left: 250px;
+}
+section{
+    background: url("https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    transition: all .5s ;
+
+}
+
+@media screen and (max-width:420px) {
+    label #btn{
+        margin-left: -30px;
+        width: 20px;
+        font-size: 20px;
+    }
+    label #cancle{
+        font-size: 20px;
+        margin-left: 80px;
+    }
+    .sidebar header{
+        font-size: 20px;
+    }
+    .sidebar ul a{
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+    }
+    .sidebar{
+        width: 180px;
+        height: auto;
+    }
+}
